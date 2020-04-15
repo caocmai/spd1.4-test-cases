@@ -24,6 +24,10 @@ def split_to_codons(rna):
 def covert_rna_to_proteins(rna):
     if len(rna) % 3 == 1:
         return "Invalid RNA strand, not multiple of 3s"
+
+    for letter in rna:
+        if letter.upper() not in string.ascii_uppercase:
+            return "Invalid characters in RNA"
     codons = split_to_codons(rna)
     translation = { 'AUG': 'Methionine', 'UUU': 'Phenylalanine', 'UUC': 'Phenylalanine', 
                     'UUA': 'Leucine', 'UUG': 'Leucine', 'UCU': 'Serine', 'UCC': 'Serine', 
@@ -56,10 +60,10 @@ if __name__ == '__main__':
     rna4 = "AUgUcAUAUUGCUAG"
     print(covert_rna_to_proteins(rna4))
     # Edge Test Cases:
-    rna5 = "_AUGUUUUCU"
+    rna5 = "_AUGUUUUC"
     print(covert_rna_to_proteins(rna5))
-    # rna6 = "#AUGUCAUAUUGCUAG"
-    # print(covert_rna_to_proteins(rna6))
+    rna6 = "#AUGUCAUAUUGCUAG"
+    print(covert_rna_to_proteins(rna6))
 
 
 
