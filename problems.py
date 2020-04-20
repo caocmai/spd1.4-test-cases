@@ -1,10 +1,10 @@
 import string
 """
-Question: Convert an RNA strand to proteins. 
+Question 1: Convert an RNA strand to proteins. 
 
-RNA: "AUGUUUUCU" => translates to
+RNA(input): "AUGUUUUCU" => translates to
 Codons: "AUG", "UUU", "UCU" => which become a polypeptide with the following sequence =>
-Protein: "Methionine", "Phenylalanine", "Serine"
+Protein(output): "Methionine", "Phenylalanine", "Serine"
 
 Codon	            Protein
 AUG	                Methionine
@@ -50,7 +50,7 @@ def covert_rna_to_proteins(rna):
 
 
 """
-Question: Convert a phrase to its acronym.
+Question 2: Convert a phrase to its acronym.
 
 input: "change me to acronym"
 output: "CMTA"
